@@ -81,8 +81,35 @@ nav.scrolled{background:rgba(10,10,10,0.96);backdrop-filter:blur(20px);border-bo
   pointer-events:none;
 }
 @media(max-width:900px){
-  .hero-logo-float{height:200px;right:1.5rem;top:50px;}
-  .hero-logo-glow{width:240px;height:240px;right:1rem;top:30px;}
+  /* Le logo se recentre en haut, au-dessus du titre */
+  .hero-logo-float{
+    height:150px;
+    top:80px;
+    right:auto;
+    left:50%;
+    transform:translateX(-50%);
+  }
+  .hero-logo-glow{
+    width:220px;
+    height:220px;
+    top:55px;
+    right:auto;
+    left:50%;
+    transform:translateX(-50%);
+  }
+
+  /* On pousse le contenu du hero vers le bas pour laisser la place au logo,
+     et on empile le tout proprement */
+  .hero-content{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:0 1.5rem 3rem;
+  }
+  .hero-left{max-width:100%}
+  .hero-eyebrow{justify-content:center}
+  .hero-right{align-items:center}
+}
 }
 .hero{
   position:relative;height:100vh;min-height:680px;

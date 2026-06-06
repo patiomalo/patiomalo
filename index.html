@@ -774,6 +774,50 @@ footer{
 
 <!-- RÉALISATIONS -->
 <section class="realisations-section" id="realisations">
+  <style>
+    .realisations-section .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;
+      margin-top:3.5rem;
+    }
+    .realisations-section .gitem{
+      display:flex;
+      flex-direction:column;
+    }
+    .realisations-section .gitem-inner{
+      position:relative;
+      overflow:hidden;
+      aspect-ratio:4/3;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    .realisations-section .gitem-inner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform 0.7s ease, filter 0.7s ease;
+      filter:brightness(0.92);
+    }
+    .realisations-section .gitem:hover .gitem-inner img{
+      transform:scale(1.06);
+      filter:brightness(1);
+    }
+    .realisations-section .caption{
+      margin-top:0.85rem;
+      font-family:var(--font-corps);
+      font-size:0.82rem;
+      letter-spacing:0.05em;
+      color:var(--texte-muted);
+      text-transform:uppercase;
+    }
+    @media(max-width:900px){
+      .realisations-section .gallery{grid-template-columns:repeat(2,1fr);gap:1.25rem}
+    }
+    @media(max-width:560px){
+      .realisations-section .gallery{grid-template-columns:1fr;gap:1.5rem}
+    }
+  </style>
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow">Nos projets</div>
@@ -781,74 +825,69 @@ footer{
       <p class="section-texte">Des vrais projets, dans de vraies cours de famille. Chaque espace raconte une histoire différente.</p>
     </div>
     <div class="gallery reveal" style="transition-delay:0.15s">
-
       <div class="gitem">
         <div class="gitem-inner">
           <img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/1.jfif" alt="Réalisation 1" loading="lazy">
         </div>
         <div class="caption">Deck cèdre — Saint-Hubert</div>
       </div>
-
       <div class="gitem">
         <div class="gitem-inner">
           <img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/2.jfif" alt="Réalisation 2" loading="lazy">
         </div>
         <div class="caption">Clôture vinyle — Longueuil</div>
       </div>
-
       <div class="gitem">
         <div class="gitem-inner">
           <img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/3.jfif" alt="Réalisation 3" loading="lazy">
         </div>
         <div class="caption">Terrasse composite — Brossard</div>
       </div>
-
       <div class="gitem">
         <div class="gitem-inner">
           <img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/4.jfif" alt="Réalisation 4" loading="lazy">
         </div>
         <div class="caption">Deck piscine — Boucherville</div>
       </div>
-
       <div class="gitem">
         <div class="gitem-inner">
           <img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/5.jfif" alt="Réalisation 5" loading="lazy">
         </div>
         <div class="caption">Pergola bois — Sainte-Julie</div>
       </div>
-
       <div class="gitem">
         <div class="gitem-inner">
           <img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/6.jfif" alt="Réalisation 6" loading="lazy">
         </div>
         <div class="caption">Patio avec clôture — Saint-Bruno</div>
       </div>
-
       <div class="gitem">
         <div class="gitem-inner">
           <img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/7.jfif" alt="Réalisation 7" loading="lazy">
         </div>
         <div class="caption">Clôture aluminium — Brossard</div>
       </div>
-
       <div class="gitem">
         <div class="gitem-inner">
           <img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/8.jfif" alt="Réalisation 8" loading="lazy">
         </div>
         <div class="caption">Deck composite — Longueuil</div>
       </div>
-
       <div class="gitem">
         <div class="gitem-inner">
           <img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/9.jfif" alt="Réalisation 9" loading="lazy">
         </div>
         <div class="caption">Aménagement complet — Sainte-Julie</div>
       </div>
-
     </div>
-    <!-- Note placeholder supprimée -->
   </div>
-</section><!-- FORMULAIRE -->
+</section>
+
+
+
+
+
+<!-- FORMULAIRE -->
 <section class="form-section" id="soumission">
   <div class="container">
     <div class="reveal">

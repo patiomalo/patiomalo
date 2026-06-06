@@ -775,36 +775,31 @@ footer{
 <!-- RÉALISATIONS -->
 <section class="realisations-section" id="realisations">
   <style>
-    #realisations .reveal{opacity:1 !important;transform:none !important;}
-    #realisations .gallery{
-      display:grid !important;
-      grid-template-columns:repeat(3,1fr) !important;
-      gap:1.25rem !important;
-      margin-top:3.5rem !important;
-      opacity:1 !important;
-      transform:none !important;
+    .galerie-malo{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.25rem;
+      margin-top:3.5rem;
     }
-    #realisations .gitem{
-      display:flex !important;
-      flex-direction:column !important;
-      opacity:1 !important;
+    .photo-malo{
+      display:flex;
+      flex-direction:column;
     }
-    #realisations .gitem-inner{
-      position:relative;
+    .photo-malo-cadre{
       overflow:hidden;
       height:240px;
       border:1px solid rgba(255,255,255,0.08);
       background:#1A1A1A;
     }
-    #realisations .gitem-inner img{
-      width:100% !important;
-      height:100% !important;
-      object-fit:cover !important;
-      display:block !important;
+    .photo-malo-cadre img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
       transition:transform 0.6s ease;
     }
-    #realisations .gitem:hover .gitem-inner img{transform:scale(1.06);}
-    #realisations .caption{
+    .photo-malo:hover .photo-malo-cadre img{transform:scale(1.06);}
+    .legende-malo{
       margin-top:0.8rem;
       font-family:var(--font-corps);
       font-size:0.82rem;
@@ -813,12 +808,12 @@ footer{
       text-transform:uppercase;
     }
     @media(max-width:900px){
-      #realisations .gallery{grid-template-columns:repeat(2,1fr) !important;}
-      #realisations .gitem-inner{height:220px;}
+      .galerie-malo{grid-template-columns:repeat(2,1fr);}
+      .photo-malo-cadre{height:220px;}
     }
     @media(max-width:560px){
-      #realisations .gallery{grid-template-columns:1fr !important;}
-      #realisations .gitem-inner{height:260px;}
+      .galerie-malo{grid-template-columns:1fr;}
+      .photo-malo-cadre{height:260px;}
     }
   </style>
   <div class="container">
@@ -827,20 +822,19 @@ footer{
       <h2 class="section-titre">Réalisations</h2>
       <p class="section-texte">Des vrais projets, dans de vraies cours de famille. Chaque espace raconte une histoire différente.</p>
     </div>
-    <div class="gallery reveal" style="transition-delay:0.15s">
-      <div class="gitem"><div class="gitem-inner"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/1.jfif" alt="Réalisation 1" loading="lazy"></div><div class="caption">Deck cèdre — Saint-Hubert</div></div>
-      <div class="gitem"><div class="gitem-inner"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/2.jfif" alt="Réalisation 2" loading="lazy"></div><div class="caption">Clôture vinyle — Longueuil</div></div>
-      <div class="gitem"><div class="gitem-inner"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/3.jfif" alt="Réalisation 3" loading="lazy"></div><div class="caption">Terrasse composite — Brossard</div></div>
-      <div class="gitem"><div class="gitem-inner"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/4.jfif" alt="Réalisation 4" loading="lazy"></div><div class="caption">Deck piscine — Boucherville</div></div>
-      <div class="gitem"><div class="gitem-inner"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/5.jfif" alt="Réalisation 5" loading="lazy"></div><div class="caption">Pergola bois — Sainte-Julie</div></div>
-      <div class="gitem"><div class="gitem-inner"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/6.jfif" alt="Réalisation 6" loading="lazy"></div><div class="caption">Patio avec clôture — Saint-Bruno</div></div>
-      <div class="gitem"><div class="gitem-inner"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/7.jfif" alt="Réalisation 7" loading="lazy"></div><div class="caption">Clôture aluminium — Brossard</div></div>
-      <div class="gitem"><div class="gitem-inner"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/8.jfif" alt="Réalisation 8" loading="lazy"></div><div class="caption">Deck composite — Longueuil</div></div>
-      <div class="gitem"><div class="gitem-inner"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/9.jfif" alt="Réalisation 9" loading="lazy"></div><div class="caption">Aménagement complet — Sainte-Julie</div></div>
+    <div class="galerie-malo">
+      <div class="photo-malo"><div class="photo-malo-cadre"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/1.jfif" alt="Réalisation 1" loading="lazy"></div><div class="legende-malo">Deck cèdre — Saint-Hubert</div></div>
+      <div class="photo-malo"><div class="photo-malo-cadre"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/2.jfif" alt="Réalisation 2" loading="lazy"></div><div class="legende-malo">Clôture vinyle — Longueuil</div></div>
+      <div class="photo-malo"><div class="photo-malo-cadre"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/3.jfif" alt="Réalisation 3" loading="lazy"></div><div class="legende-malo">Terrasse composite — Brossard</div></div>
+      <div class="photo-malo"><div class="photo-malo-cadre"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/4.jfif" alt="Réalisation 4" loading="lazy"></div><div class="legende-malo">Deck piscine — Boucherville</div></div>
+      <div class="photo-malo"><div class="photo-malo-cadre"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/5.jfif" alt="Réalisation 5" loading="lazy"></div><div class="legende-malo">Pergola bois — Sainte-Julie</div></div>
+      <div class="photo-malo"><div class="photo-malo-cadre"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/6.jfif" alt="Réalisation 6" loading="lazy"></div><div class="legende-malo">Patio avec clôture — Saint-Bruno</div></div>
+      <div class="photo-malo"><div class="photo-malo-cadre"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/7.jfif" alt="Réalisation 7" loading="lazy"></div><div class="legende-malo">Clôture aluminium — Brossard</div></div>
+      <div class="photo-malo"><div class="photo-malo-cadre"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/8.jfif" alt="Réalisation 8" loading="lazy"></div><div class="legende-malo">Deck composite — Longueuil</div></div>
+      <div class="photo-malo"><div class="photo-malo-cadre"><img src="https://raw.githubusercontent.com/patiomalo/patiomalo/main/9.jfif" alt="Réalisation 9" loading="lazy"></div><div class="legende-malo">Aménagement complet — Sainte-Julie</div></div>
     </div>
   </div>
 </section>
-
 
 <!-- FORMULAIRE -->
 <section class="form-section" id="soumission">

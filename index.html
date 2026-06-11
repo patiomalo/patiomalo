@@ -20,7 +20,7 @@
   --creme:#F5F0E8;
   --bois:#8B5E3C;
   --texte:#E8E4DC;
-  --texte-muted:rgba(232,228,220,0.55);
+  --texte-muted:rgba(232,228,220,0.78);
   --font-titre:'Cormorant Garamond',Georgia,serif;
   --font-corps:'Outfit',system-ui,sans-serif;
 }
@@ -194,7 +194,7 @@ h1.hero-titre em{
 }
 .bande-right{
   font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(255,255,255,0.45);white-space:nowrap;
+  color:rgba(255,255,255,0.7);white-space:nowrap;
 }
 
 /* ── SECTION GÉNÉRIQUE ── */
@@ -299,7 +299,17 @@ h2.section-titre em{font-style:italic;color:var(--or-pale)}
   padding:6rem 5rem;
   max-width:1200px;margin:0 auto;
 }
-.acoustic-header{margin-bottom:3rem}
+.acoustic-header{
+  margin-bottom:2.5rem;
+  display:inline-block;
+  background:rgba(10,10,10,0.55);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:22px;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  padding:2rem 2.5rem;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+}
 .acoustic-cards{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -326,7 +336,7 @@ h2.section-titre em{font-style:italic;color:var(--or-pale)}
   margin-bottom:0.6rem;line-height:1.4;
 }
 .acard-texte{
-  font-size:0.8rem;color:rgba(255,255,255,0.5);
+  font-size:0.8rem;color:rgba(255,255,255,0.72);
   font-weight:300;line-height:1.75;
 }
 @media(max-width:900px){
@@ -599,6 +609,21 @@ footer{
   .mat-picker{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
 }
+
+    .acoustic-single{
+      max-width:640px;margin-top:1.5rem;
+      background:rgba(10,10,10,0.62);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:22px;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      padding:2.5rem 2.75rem;
+      box-shadow:0 20px 60px rgba(0,0,0,0.35);
+    }
+    .acoustic-lead{font-family:var(--font-titre);font-size:1.9rem;line-height:1.3;color:#fff;font-weight:400;margin-bottom:1.2rem}
+    .acoustic-lead em{color:var(--or-pale);font-style:italic}
+    .acoustic-body{font-size:1.02rem;line-height:1.8;color:rgba(255,255,255,0.85);font-weight:300}
+    @media(max-width:600px){.acoustic-lead{font-size:1.5rem}.acoustic-single{padding:1.75rem 1.5rem;border-radius:18px}.acoustic-header{padding:1.5rem 1.5rem;border-radius:18px;display:block}}
 </style>
 </head>
 <body>
@@ -613,7 +638,6 @@ footer{
     <a href="#services">Services</a>
     <a href="#pourquoi">Patrick Malo</a>
     <a href="#realisations">Réalisations</a>
-    <a href="#faq">FAQ</a>
     <a href="#soumission" class="nav-btn">Soumission</a>
   </div>
 </nav>
@@ -644,7 +668,7 @@ footer{
 <!-- BANDE INTRO -->
 <div class="bande">
   <p>Un bon patio, ça commence par quelqu'un qui comprend votre réalité.</p>
-  <div class="bande-right">Patrick Malo, propriétaire</div>
+  <div class="bande-right">Patrick Malo, fondateur</div>
 </div>
 
 <!-- SERVICES -->
@@ -671,7 +695,6 @@ footer{
             <rect x="43" y="14" width="3" height="20" rx="1" fill="#C8A96E" opacity="0.8"/>
             <!-- Poutre horizontale du haut -->
             <rect x="4" y="11" width="44" height="4" rx="1" fill="#C8A96E"/>
-            <!-- Lattes de pergola verticales -->
             <rect x="10" y="4" width="3" height="10" rx="1" fill="#C8A96E" opacity="0.6"/>
             <rect x="17" y="4" width="3" height="10" rx="1" fill="#C8A96E" opacity="0.6"/>
             <rect x="24" y="4" width="3" height="10" rx="1" fill="#C8A96E" opacity="0.6"/>
@@ -725,7 +748,6 @@ footer{
           <span class="mat">Bois traité</span>
           <span class="mat">Cèdre naturel</span>
           <span class="mat">Vinyle</span>
-          <span class="mat">Aluminium</span>
           <span class="mat">Composite</span>
           <span class="mat">Brise-vue</span>
         </div>
@@ -748,10 +770,6 @@ footer{
     <div class="mat-nom">Vinyle / PVC</div>
     <p class="mat-desc">Idéal pour les clôtures. Imperméable, sans éclats, jamais à peindre. Parfait quand les enfants courent dans la cour.</p>
   </div>
-  <div class="mat-item">
-    <div class="mat-nom">Aluminium</div>
-    <p class="mat-desc">Léger, robuste, sans rouille. Clôtures ornementales ou structures de pergola. La solidité discrète.</p>
-  </div>
 </div>
 
 <!-- POURQUOI MALO -->
@@ -765,29 +783,11 @@ footer{
       <div class="acoustic-header">
         <div class="section-eyebrow" style="color:#fff">Notre approche</div>
         <h2 class="section-titre">Un entrepreneur<br><em>accessible, vrai</em></h2>
-        <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);font-weight:300;max-width:500px;line-height:1.7;margin-top:0.5rem">Pas de centre d'appels. Quand vous appelez, c'est Patrick qui répond — celui qui va aussi construire votre projet.</p>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.82);font-weight:300;max-width:500px;line-height:1.7;margin-top:0.5rem">Pas de centre d'appels. Quand vous appelez, c'est Patrick qui répond — celui qui va aussi construire votre projet.</p>
       </div>
-      <div class="acoustic-cards">
-        <div class="acard">
-          <div class="acard-num">01</div>
-          <div class="acard-titre">Joignable, point</div>
-          <p class="acard-texte">Patrick répond à ses appels et retourne ses messages. Votre projet n'est pas un numéro dans une file d'attente.</p>
-        </div>
-        <div class="acard">
-          <div class="acard-num">02</div>
-          <div class="acard-titre">Il comprend votre réalité</div>
-          <p class="acard-texte">Cour familiale, budget réel — il trouve les meilleures solutions sans vous vendre du luxe inutile.</p>
-        </div>
-        <div class="acard">
-          <div class="acard-num">03</div>
-          <div class="acard-titre">Prix honnête, sans surprises</div>
-          <p class="acard-texte">Le prix qu'on vous donne, c'est le prix que vous payez. Pas de frais cachés en cours de route.</p>
-        </div>
-        <div class="acard">
-          <div class="acard-num">04</div>
-          <div class="acard-titre">Travail signé de son nom</div>
-          <p class="acard-texte">La qualité, c'est une question personnelle pour Patrick. Chaque projet, il le signe.</p>
-        </div>
+      <div class="acoustic-single">
+        <p class="acoustic-lead">Avec Patrick, c'est simple : quelqu'un de <em>joignable, accessible et raisonnable</em>.</p>
+        <p class="acoustic-body">Il répond à ses appels et retourne ses messages — votre projet n'est pas un numéro dans une file d'attente. Il comprend votre réalité, vous propose des solutions à votre budget, et le prix qu'il vous donne, c'est celui que vous payez. Un entrepreneur avec qui on peut parler franchement, du début à la fin.</p>
       </div>
       <div style="margin-top:2.5rem">
         <a href="tel:5142974133" class="hero-cta" style="display:inline-flex">
@@ -883,7 +883,6 @@ footer{
             <option>Un deck de piscine</option>
             <option>Une clôture</option>
             <option>Un brise-vue</option>
-            <option>Une pergola</option>
             <option>Patio + clôture ensemble</option>
             <option>Autre / à discuter</option>
           </select>
@@ -895,7 +894,6 @@ footer{
           <div><input type="radio" name="mat" id="m2" class="mat-radio"><label for="m2" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>Cèdre</label></div>
           <div><input type="radio" name="mat" id="m3" class="mat-radio"><label for="m3" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="3" rx="1"/><rect x="2" y="10" width="20" height="3" rx="1"/><rect x="2" y="17" width="20" height="3" rx="1"/></svg>Composite</label></div>
           <div><input type="radio" name="mat" id="m4" class="mat-radio"><label for="m4" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Vinyle / PVC</label></div>
-          <div><input type="radio" name="mat" id="m5" class="mat-radio"><label for="m5" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M9 5v14M15 5v14"/></svg>Aluminium</label></div>
           <div><input type="radio" name="mat" id="m6" class="mat-radio"><label for="m6" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Je sais pas</label></div>
         </div>
 
@@ -927,52 +925,8 @@ footer{
         </div>
         <div class="zone">
           <strong>Zone desservie</strong>
-          Rive-Sud de Montréal — Longueuil, Brossard, Saint-Hubert, Boucherville, Sainte-Julie, Varennes et environs.
+          Basé à Repentigny. Dessert la Rive-Nord et la Rive-Sud de Montréal et leurs environs.
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-eyebrow">Questions fréquentes</div>
-      <h2 class="section-titre">On répond à vos<br><em>vraies questions</em></h2>
-    </div>
-    <div class="faq-grid reveal" style="transition-delay:0.1s">
-      <div class="faq-item" onclick="faq(this)">
-        <div class="faq-q"><h4>Bois traité ou composite — quelle différence concrète?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a">Le bois traité est moins cher à l'installation, mais demande une teinture tous les 2-3 ans. Le composite coûte plus au départ, mais zéro entretien et dure souvent 25 ans ou plus. Patrick peut vous aider à choisir selon votre budget long terme.</div>
-      </div>
-      <div class="faq-item" onclick="faq(this)">
-        <div class="faq-q"><h4>Est-ce que j'ai besoin d'un permis?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a">Ça dépend de votre municipalité et des dimensions du projet. Patrick vous guide là-dedans — la démarche est souvent plus simple qu'on pense.</div>
-      </div>
-      <div class="faq-item" onclick="faq(this)">
-        <div class="faq-q"><h4>C'est quoi le bon moment pour planifier?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a">L'automne ou l'hiver, pour une réalisation au printemps. La saison de construction est courte au Québec et les places se remplissent vite.</div>
-      </div>
-      <div class="faq-item" onclick="faq(this)">
-        <div class="faq-q"><h4>Vous faites les deux — patio ET clôture?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a">Oui, et combiner les deux en une intervention, c'est souvent plus efficace et peut vous faire économiser.</div>
-      </div>
-      <div class="faq-item" onclick="faq(this)">
-        <div class="faq-q"><h4>Je sais pas exactement ce que je veux — vous pouvez m'aider?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a">Exactement pour ça que Patrick vient voir le terrain avant de faire une soumission. Ensemble on regarde l'espace et vos besoins, et il propose des options concrètes — pas un catalogue interminable.</div>
-      </div>
-      <div class="faq-item" onclick="faq(this)">
-        <div class="faq-q"><h4>Combien de temps ça prend?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a">Un patio standard (12×16 pi en bois traité) se fait généralement en 2-3 jours. Un composite ou projet plus complexe peut prendre 3-5 jours. Patrick vous donne un calendrier précis à la soumission.</div>
-      </div>
-      <div class="faq-item" onclick="faq(this)">
-        <div class="faq-q"><h4>La soumission est vraiment gratuite?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a">Oui, complètement. Patrick vient voir le terrain, mesure, discute avec vous et remet un prix clair. Aucune obligation, aucun frais.</div>
-      </div>
-      <div class="faq-item" onclick="faq(this)">
-        <div class="faq-q"><h4>Quelle zone géographique?</h4><div class="faq-toggle">+</div></div>
-        <div class="faq-a">Principalement la Rive-Sud : Longueuil, Brossard, Saint-Hubert, Boucherville, Sainte-Julie, Varennes. Pas sûr? Appelez Patrick — il vous dira honnêtement.</div>
       </div>
     </div>
   </div>
@@ -986,7 +940,6 @@ footer{
     <a href="#pourquoi">Patrick Malo</a>
     <a href="#realisations">Réalisations</a>
     <a href="#soumission">Soumission</a>
-    <a href="#faq">FAQ</a>
     <a href="tel:5142974133">(514) 297-4133</a>
     <a href="mailto:info@patiomalo.com">info@patiomalo.com</a>
   </div>

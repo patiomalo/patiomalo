@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -401,6 +400,7 @@ h2.section-titre em{font-style:italic;color:var(--or-pale)}
   border:none;cursor:pointer;transition:background 0.3s;margin-top:0.5rem;
 }
 .btn-submit:hover{background:var(--or-pale)}
+.btn-submit:disabled{cursor:default}
 
 /* SIDEBAR */
 .form-sidebar{padding-top:0.5rem}
@@ -745,22 +745,27 @@ footer{
       <h2 class="section-titre">Parlons de<br><em>votre projet</em></h2>
     </div>
     <div class="form-layout">
-      <div class="form-box reveal" style="transition-delay:0.1s">
+
+      <form id="formSoumission" class="form-box reveal" style="transition-delay:0.1s"
+            action="https://formspree.io/f/mnjezydg" method="POST">
+
+        <input type="hidden" name="_subject" value="Nouvelle demande de soumission — patiomalo.com">
+
         <div class="form-section-label">Vos coordonnées</div>
         <div class="form-row">
-          <div class="field"><label>Prénom</label><input type="text" placeholder="Jean"></div>
-          <div class="field"><label>Nom</label><input type="text" placeholder="Tremblay"></div>
+          <div class="field"><label>Prénom</label><input type="text" name="prenom" placeholder="Jean" required></div>
+          <div class="field"><label>Nom</label><input type="text" name="nom" placeholder="Tremblay" required></div>
         </div>
         <div class="form-row">
-          <div class="field"><label>Téléphone</label><input type="tel" placeholder="(514) 000-0000"></div>
-          <div class="field"><label>Courriel</label><input type="email" placeholder="jean@exemple.com"></div>
+          <div class="field"><label>Téléphone</label><input type="tel" name="telephone" placeholder="(514) 000-0000" required></div>
+          <div class="field"><label>Courriel</label><input type="email" name="email" placeholder="jean@exemple.com" required></div>
         </div>
-        <div class="field"><label>Ville / Secteur</label><input type="text" placeholder="Montréal, Longueuil, Repentigny…"></div>
+        <div class="field"><label>Ville / Secteur</label><input type="text" name="ville" placeholder="Montréal, Longueuil, Repentigny…"></div>
 
         <div class="form-section-label">Type de projet</div>
         <div class="field">
           <label>Je veux réaliser</label>
-          <select>
+          <select name="type_projet" required>
             <option value="">— Choisir —</option>
             <option>Un patio / deck</option>
             <option>Un deck de piscine</option>
@@ -773,22 +778,26 @@ footer{
 
         <div class="form-section-label">Matériau</div>
         <div class="mat-picker">
-          <div><input type="radio" name="mat" id="m1" class="mat-radio"><label for="m1" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="2" rx="1"/><rect x="3" y="13" width="18" height="2" rx="1"/></svg>Bois naturel</label></div>
-          <div><input type="radio" name="mat" id="m2" class="mat-radio"><label for="m2" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>Cèdre</label></div>
-          <div><input type="radio" name="mat" id="m3" class="mat-radio"><label for="m3" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="3" rx="1"/><rect x="2" y="10" width="20" height="3" rx="1"/><rect x="2" y="17" width="20" height="3" rx="1"/></svg>Composite</label></div>
-          <div><input type="radio" name="mat" id="m4" class="mat-radio"><label for="m4" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Vinyle / PVC</label></div>
-          <div><input type="radio" name="mat" id="m5" class="mat-radio"><label for="m5" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>Sur mesure</label></div>
-          <div><input type="radio" name="mat" id="m6" class="mat-radio"><label for="m6" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Je sais pas</label></div>
+          <div><input type="radio" name="materiau" value="Bois naturel" id="m1" class="mat-radio"><label for="m1" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="2" rx="1"/><rect x="3" y="13" width="18" height="2" rx="1"/></svg>Bois naturel</label></div>
+          <div><input type="radio" name="materiau" value="Cèdre" id="m2" class="mat-radio"><label for="m2" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>Cèdre</label></div>
+          <div><input type="radio" name="materiau" value="Composite" id="m3" class="mat-radio"><label for="m3" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="3" rx="1"/><rect x="2" y="10" width="20" height="3" rx="1"/><rect x="2" y="17" width="20" height="3" rx="1"/></svg>Composite</label></div>
+          <div><input type="radio" name="materiau" value="Vinyle / PVC" id="m4" class="mat-radio"><label for="m4" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Vinyle / PVC</label></div>
+          <div><input type="radio" name="materiau" value="Sur mesure" id="m5" class="mat-radio"><label for="m5" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>Sur mesure</label></div>
+          <div><input type="radio" name="materiau" value="Ne sait pas" id="m6" class="mat-radio"><label for="m6" class="mat-lbl"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Je sais pas</label></div>
         </div>
 
         <div class="form-section-label">Dimensions approximatives</div>
         <div class="form-row">
-          <div class="field"><label>Largeur (pieds)</label><input type="number" placeholder="ex: 12"></div>
-          <div class="field"><label>Profondeur (pieds)</label><input type="number" placeholder="ex: 16"></div>
+          <div class="field"><label>Largeur (pieds)</label><input type="number" name="largeur" placeholder="ex: 12"></div>
+          <div class="field"><label>Profondeur (pieds)</label><input type="number" name="profondeur" placeholder="ex: 16"></div>
         </div>
-        <div class="field"><label>Précisions (optionnel)</label><textarea placeholder="Deck de piscine creusée, accès difficile, clôture à refaire en partie… Dites-nous tout."></textarea></div>
-        <button class="btn-submit" id="submitBtn">Envoyer ma demande →</button>
-      </div>
+        <div class="field"><label>Précisions (optionnel)</label><textarea name="precisions" placeholder="Deck de piscine creusée, accès difficile, clôture à refaire en partie… Dites-nous tout."></textarea></div>
+
+        <!-- piège anti-pourriel (invisible pour les humains) -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <button type="submit" class="btn-submit" id="submitBtn">Envoyer ma demande →</button>
+      </form>
 
       <div class="form-sidebar reveal" style="transition-delay:0.2s">
         <div class="contact-bloc">
@@ -842,10 +851,30 @@ const obs=new IntersectionObserver(entries=>{
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 setTimeout(()=>document.querySelectorAll('.hero .reveal, .bande .reveal').forEach(el=>el.classList.add('visible')),100);
 
-// Submit
-document.getElementById('submitBtn').addEventListener('click',function(){
-  this.textContent='✓ Reçu — on vous contactera bientôt';
-  this.style.background='#2A5C2A';this.style.color='#fff';this.disabled=true;
+// Envoi du formulaire (Formspree — envoi en arrière-plan, sans redirection)
+const formSoum=document.getElementById('formSoumission');
+formSoum.addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=document.getElementById('submitBtn');
+  btn.disabled=true;
+  btn.textContent='Envoi en cours…';
+  try{
+    const res=await fetch(formSoum.action,{
+      method:'POST',
+      body:new FormData(formSoum),
+      headers:{'Accept':'application/json'}
+    });
+    if(!res.ok) throw new Error('Envoi refusé');
+    btn.textContent='✓ Reçu — on vous contactera bientôt';
+    btn.style.background='#2A5C2A';
+    btn.style.color='#fff';
+    formSoum.reset();
+  }catch(err){
+    btn.textContent='Erreur — appelez-nous au (514) 297-4133';
+    btn.style.background='#8B2A2A';
+    btn.style.color='#fff';
+    btn.disabled=false;
+  }
 });
 </script>
 </body>
